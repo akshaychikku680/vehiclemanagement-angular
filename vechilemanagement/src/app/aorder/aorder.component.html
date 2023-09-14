@@ -1,0 +1,16 @@
+<h1 class="text-center text-white bg-primary font-italic">Vehicle Rental Service</h1>
+<div class='container-fluid'>
+    <div class="row">
+        <div class="card mx-auto col-md-3 col-10 mt-5" *ngFor="let i of data">
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">Username = {{i.user}}</h5>
+                        <h5 class="card-title font-weight-bold">Vechile = {{i.vec}}</h5>
+                        <p class="card-text">Borrow Date = {{i.date_of_borrow}}</p>
+                        <p class="card-text">Return Date = {{i.date_of_return}}</p>
+                        <p class="card-text">Fine = {{i.fine}}</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

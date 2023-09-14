@@ -1,0 +1,26 @@
+<h1 class="text-center text-white bg-primary font-italic">Vehicle Rental Service</h1>
+<div class="text-right">
+        <a class="navbar-brand  btn btn-success" routerLink="/order">Your Orders</a>
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
+<div class='container-fluid'>
+    <div class="row">
+        <div class="card mx-auto col-md-3 col-10 mt-5" *ngFor="let i of data">
+            <img class='mx-auto img-thumbnail'
+                src="{{i.vechile_image}}"
+                width="auto" height="auto"/>
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <h5 class="card-title font-weight-bold">{{i.vechile_number}}</h5>
+                    <p class="card-text">{{i.model}}</p>
+                    <p class="card-text">Renet per day = Rs.{{i.rent_per_day}}</p>
+                    <p class="card-text">Seating Capacity = {{i.seating_capacity}}</p>
+                    <div *ngIf="i.availability==true">
+                        <button id="{{i.id}}" class="btn details px-auto" (click)="bookPage($event)">Book Vehicle</button>
+                    </div>
+                    <!-- <button  id="{{i.id}}" class="btn cart px-auto" (click)="deletepro($event)">Delete</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

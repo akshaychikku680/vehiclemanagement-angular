@@ -1,0 +1,13 @@
+<h1 class="text-success text-center font-italic">Add New Vehicle</h1>
+<div class="jumbotron">
+    <form action="" [formGroup]="proForm" (ngSubmit)="submitted()">
+        <label for="">Date of Return</label>
+        <input type="date" class="form-control" formControlName="dr">
+        <div class="alert alert-danger" *ngIf="proForm.get('dr')?.invalid && proForm.get('dr')?.touched">
+            Invalid Name
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success" [disabled]="">Add Vehicle</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<h1 class="text-success text-center font-italic">Add New Vehicle</h1>
+<div class="jumbotron">
+    <form action="" [formGroup]="proForm" (ngSubmit)="submitted()">
+        <label for="">Vehicle Number</label>
+        <input type="text" class="form-control" formControlName="num">
+        <div class="alert alert-danger" *ngIf="proForm.get('num')?.invalid && proForm.get('num')?.touched">
+            Invalid Name
+        </div>
+        <label for="">Model</label>
+        <input type="text" class="form-control" formControlName="mod">
+        <div class="alert alert-danger" *ngIf="proForm.get('mod')?.invalid && proForm.get('mod')?.touched">
+            Invalid Model
+        </div>
+        <label for="">Seating Capacity</label>
+        <input type="number" name="" id="" class="form-control" formControlName="seatc">
+        <div class="alert alert-danger" *ngIf="proForm.get('seatc')?.invalid && proForm.get('seatc')?.touched">
+            Invalid Capacity
+        </div>
+        <label for="">Rent per day</label>
+        <input type="number" name="" id="" class="form-control" formControlName="rentpd">
+        <div class="alert alert-danger" *ngIf="proForm.get('rentpd')?.invalid && proForm.get('rentpd')?.touched">
+            Invalid Price
+        </div>
+        <label for="">Image</label>
+        <input type="file" required="" (change)="uploadImage($event)" class="form-control">
+        <br>
+        <div class="text-center">
+            <button class="btn btn-success" [disabled]="proForm.invalid">Add Vehicle</button>
+        </div>
+    </form>
+</div>
